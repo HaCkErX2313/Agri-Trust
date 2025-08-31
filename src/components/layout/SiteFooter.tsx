@@ -14,15 +14,15 @@ export const SiteFooter = () => {
                 <Shield className="h-4 w-4 text-trust absolute -top-1 -right-1" />
               </div>
               <div>
-                <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                  AgriChain
+                <span className="text-xl font-bold text-primary">
+                  AgriTrust
                 </span>
-                <p className="text-xs text-muted-foreground">Odisha</p>
+                <p className="text-xs text-muted-foreground">Smart farming, transparent supply chains</p>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
               Transparent agricultural supply chain powered by blockchain technology, 
-              ensuring fair pricing and quality assurance for Odisha's farmers and consumers.
+              ensuring fair pricing and quality assurance for farmers and consumers across India.
             </p>
           </div>
 
@@ -67,15 +67,15 @@ export const SiteFooter = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4" />
-                <span>Bhubaneswar, Odisha</span>
+                <span>Pan India Operations</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>info@agrichain.odisha.gov.in</span>
+                <span>info@agritrust.gov.in</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4" />
-                <span>+91 674 XXXX XXX</span>
+                <span>+91 11 XXXX XXXX</span>
               </div>
             </div>
           </div>
@@ -85,7 +85,7 @@ export const SiteFooter = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-muted-foreground">
-              © 2024 Government of Odisha. All rights reserved.
+              © 2024 AgriTrust India. All rights reserved.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">

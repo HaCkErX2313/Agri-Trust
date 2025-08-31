@@ -12,7 +12,10 @@ import {
   Globe,
   Award,
   BarChart3,
-  Package
+  Package,
+  Brain,
+  LinkIcon,
+  Smartphone
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-agriculture.jpg";
@@ -27,118 +30,113 @@ const Index = () => {
 
   const features = [
     {
+      icon: Brain,
+      title: "Smart Advisory",
+      description: "Recommendations tailored to your soil, season, and irrigation.",
+      highlight: "AI-Powered"
+    },
+    {
       icon: Shield,
-      title: "Blockchain Security",
-      description: "Immutable records ensure complete transparency and prevent fraud in the supply chain."
+      title: "On-chain Trust",
+      description: "Tamper-evident supply chain records with simple blockchain.",
+      highlight: "Blockchain Verified"
     },
     {
-      icon: QrCode,
-      title: "QR Code Tracking",
-      description: "Simple scanning technology that provides instant access to complete product history."
-    },
-    {
-      icon: TrendingUp,
-      title: "Fair Pricing",
-      description: "Real-time market data ensures farmers receive fair compensation for their produce."
-    },
-    {
-      icon: Award,
-      title: "Quality Assurance",
-      description: "Automated quality scoring and certification tracking for premium agricultural products."
+      icon: LinkIcon,
+      title: "From Farm to Fork",
+      description: "Track batches across actors for clear transparency.",
+      highlight: "Full Traceability"
     }
   ];
 
   const benefits = [
     "End-to-end traceability from farm to consumer",
-    "Reduced exploitation of farmers by middlemen", 
+    "AI-powered crop recommendations for maximum yield", 
     "Verified organic and quality certifications",
-    "Real-time pricing and market information",
+    "Real-time market pricing and demand forecasting",
     "Blockchain-secured transaction records",
     "Direct farmer-consumer connections"
   ];
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-accent/80" />
+        <div className="absolute inset-0 bg-background/90 dark:bg-background/95" />
         
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <Badge variant="secondary" className="mb-6 bg-white/10 text-white border-white/20">
-            <Leaf className="h-4 w-4 mr-2" />
-            Government of Odisha Initiative
-          </Badge>
-          
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Transparent 
-            <br />
-            <span className="text-primary-glow">Agricultural</span> Supply Chain
-          </h1>
-          
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
-            Revolutionary blockchain technology ensuring fair pricing, quality assurance, 
-            and complete transparency from Odisha's farms to your table.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" variant="hero" className="text-lg px-8 py-4">
-              <QrCode className="h-5 w-5 mr-2" />
-              Verify Produce Now
-            </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-white/10 border-white/20 text-white hover:bg-white/20">
-              Learn More
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Button>
-          </div>
+        <div className="relative z-10 container mx-auto px-4 py-20">
+          <div className="max-w-4xl">
+            <Badge variant="secondary" className="mb-6 bg-primary/10 text-primary border-primary/20">
+              <Leaf className="h-4 w-4 mr-2" />
+              Smart farming, transparent supply chains
+            </Badge>
+            
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              Agriculture, made smarter
+              <br />
+              <span className="text-primary">with AI advisory and</span>
+              <br />
+              <span className="text-primary">blockchain transparency</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl text-muted-foreground">
+              AgriTrust helps farmers choose the right crops for their soil and season, while 
+              building trust with an on-chain ledger for every batch from farm to fork.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <Link to="/advice">
+                <Button size="lg" className="text-lg px-8 py-4 bg-primary hover:bg-primary/90">
+                  Get Crop Advice
+                </Button>
+              </Link>
+              <Link to="/verify">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-4">
+                  Explore Ledger
+                </Button>
+              </Link>
+            </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {stats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <div key={index} className="text-center">
-                  <IconComponent className="h-8 w-8 mx-auto mb-2 text-primary-glow" />
-                  <div className="text-2xl md:text-3xl font-bold">{stat.value}</div>
-                  <div className="text-sm opacity-80">{stat.label}</div>
-                </div>
-              );
-            })}
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl">
+              {stats.map((stat, index) => {
+                const IconComponent = stat.icon;
+                return (
+                  <div key={index} className="text-center">
+                    <IconComponent className="h-8 w-8 mx-auto mb-2 text-primary" />
+                    <div className="text-2xl md:text-3xl font-bold">{stat.value}</div>
+                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gradient-subtle">
+      <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">
-              <span className="bg-gradient-primary bg-clip-text text-transparent">
-                How AgriChain Works
-              </span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our blockchain-powered platform connects every stakeholder in the agricultural 
-              supply chain, ensuring transparency, quality, and fair pricing.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <Card key={index} className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105">
-                  <CardHeader className="text-center">
-                    <div className="bg-gradient-primary p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                      <IconComponent className="h-8 w-8 text-primary-foreground" />
+                <Card key={index} className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105 border-0 bg-card/80 backdrop-blur">
+                  <CardContent className="p-8">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="bg-primary/20 p-3 rounded-lg">
+                        <IconComponent className="h-6 w-6 text-primary" />
+                      </div>
+                      <Badge variant="secondary" className="bg-primary/10 text-primary">
+                        {feature.highlight}
+                      </Badge>
                     </div>
-                    <CardTitle className="text-xl">{feature.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center">
-                    <p className="text-muted-foreground">{feature.description}</p>
+                    <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
                   </CardContent>
                 </Card>
               );
@@ -147,21 +145,19 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Technology Deep Dive */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
             <div>
               <h2 className="text-4xl font-bold mb-6">
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  Transforming Agriculture
-                </span>
+                <span className="text-primary">Transforming Agriculture</span>
                 <br />
-                in Odisha
+                with Advanced Technology
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Our blockchain-based solution addresses critical challenges in the agricultural 
-                supply chain, from farmer exploitation to consumer uncertainty about product quality and origin.
+                Our platform combines artificial intelligence with blockchain technology to create 
+                the most advanced agricultural advisory and supply chain transparency system in India.
               </p>
               
               <div className="space-y-4">
@@ -175,8 +171,8 @@ const Index = () => {
 
               <div className="mt-8">
                 <Link to="/about">
-                  <Button variant="hero" size="lg">
-                    Learn More About Our Mission
+                  <Button variant="default" size="lg" className="bg-primary hover:bg-primary/90">
+                    Learn More About Our Technology
                     <ArrowRight className="h-5 w-5 ml-2" />
                   </Button>
                 </Link>
@@ -184,44 +180,46 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <Card className="shadow-trust">
+              <Card className="shadow-trust border-primary/20">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold mb-6 text-center">Supply Chain Transparency</h3>
+                  <h3 className="text-2xl font-bold mb-6 text-center">
+                    <span className="text-primary">Blockchain-Powered</span> Supply Chain
+                  </h3>
                   <div className="space-y-6">
                     <div className="flex items-center space-x-4">
-                      <div className="bg-primary/20 rounded-full w-10 h-10 flex items-center justify-center">
+                      <div className="bg-primary/20 rounded-full w-12 h-12 flex items-center justify-center">
                         <span className="text-primary font-bold">1</span>
                       </div>
                       <div>
-                        <h4 className="font-semibold">Farm Production</h4>
-                        <p className="text-sm text-muted-foreground">Farmer registers product with quality details</p>
+                        <h4 className="font-semibold">AI Crop Advisory</h4>
+                        <p className="text-sm text-muted-foreground">Smart recommendations based on soil, weather & market data</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
-                      <div className="bg-primary/20 rounded-full w-10 h-10 flex items-center justify-center">
+                      <div className="bg-primary/20 rounded-full w-12 h-12 flex items-center justify-center">
                         <span className="text-primary font-bold">2</span>
                       </div>
                       <div>
                         <h4 className="font-semibold">Blockchain Recording</h4>
-                        <p className="text-sm text-muted-foreground">Immutable transaction recorded on blockchain</p>
+                        <p className="text-sm text-muted-foreground">Immutable records from farm to consumer</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
-                      <div className="bg-primary/20 rounded-full w-10 h-10 flex items-center justify-center">
+                      <div className="bg-primary/20 rounded-full w-12 h-12 flex items-center justify-center">
                         <span className="text-primary font-bold">3</span>
                       </div>
                       <div>
-                        <h4 className="font-semibold">Distribution Tracking</h4>
-                        <p className="text-sm text-muted-foreground">Real-time tracking through supply chain</p>
+                        <h4 className="font-semibold">Supply Chain Tracking</h4>
+                        <p className="text-sm text-muted-foreground">Real-time visibility across all stakeholders</p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-4">
-                      <div className="bg-primary/20 rounded-full w-10 h-10 flex items-center justify-center">
+                      <div className="bg-primary/20 rounded-full w-12 h-12 flex items-center justify-center">
                         <span className="text-primary font-bold">4</span>
                       </div>
                       <div>
                         <h4 className="font-semibold">Consumer Verification</h4>
-                        <p className="text-sm text-muted-foreground">QR scan reveals complete product history</p>
+                        <p className="text-sm text-muted-foreground">Instant QR code verification for authenticity</p>
                       </div>
                     </div>
                   </div>
@@ -232,28 +230,74 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Integration Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            <span className="text-primary">Seamless Integration</span> with Existing Systems
+          </h2>
+          <p className="text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
+            AgriTrust works with your existing farming practices and integrates with IoT sensors, 
+            weather stations, and market data providers for comprehensive agricultural intelligence.
+          </p>
+          
+          <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <Card className="shadow-elegant">
+              <CardContent className="p-6 text-center">
+                <Smartphone className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold mb-2">Mobile Apps</h3>
+                <p className="text-sm text-muted-foreground">iOS & Android apps for farmers and consumers</p>
+              </CardContent>
+            </Card>
+            <Card className="shadow-elegant">
+              <CardContent className="p-6 text-center">
+                <BarChart3 className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold mb-2">IoT Integration</h3>
+                <p className="text-sm text-muted-foreground">Connect sensors for real-time crop monitoring</p>
+              </CardContent>
+            </Card>
+            <Card className="shadow-elegant">
+              <CardContent className="p-6 text-center">
+                <Globe className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold mb-2">Weather APIs</h3>
+                <p className="text-sm text-muted-foreground">Integrated weather forecasting and alerts</p>
+              </CardContent>
+            </Card>
+            <Card className="shadow-elegant">
+              <CardContent className="p-6 text-center">
+                <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="font-semibold mb-2">Market Data</h3>
+                <p className="text-sm text-muted-foreground">Real-time pricing from major agricultural markets</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-primary text-primary-foreground">
+      <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Ready to Join the Agricultural Revolution?
+            Ready to Transform Your Agricultural Experience?
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-            Whether you're a farmer looking for fair pricing, a distributor seeking quality assurance, 
-            or a consumer wanting transparency, AgriChain Odisha has the tools you need.
+            Join thousands of farmers, distributors, and consumers who trust AgriTrust 
+            for transparent, technology-powered agriculture.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/advice">
+              <Button size="lg" variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
+                <Brain className="h-5 w-5 mr-2" />
+                Get Crop Advice
+              </Button>
+            </Link>
             <Link to="/verify">
               <Button size="lg" variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
                 <QrCode className="h-5 w-5 mr-2" />
-                Verify a Product
+                Explore Ledger
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="bg-white/10 border-white/20 text-white hover:bg-white/20">
-              Join as a Farmer
-              <ArrowRight className="h-5 w-5 ml-2" />
-            </Button>
           </div>
         </div>
       </section>

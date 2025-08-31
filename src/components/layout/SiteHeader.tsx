@@ -1,16 +1,43 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Shield, Leaf } from "lucide-react";
+import { Menu, X, Shield, Leaf, Sun, Moon, Globe } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useTheme } from "next-themes";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export const SiteHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
   const location = useLocation();
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Verify Produce", href: "/verify" },
+    { name: "Get Advice", href: "/advice" },
+    { name: "View Ledger", href: "/verify" },
     { name: "About", href: "/about" },
+  ];
+
+  const languages = [
+    { code: 'en', name: 'English', native: 'English' },
+    { code: 'hi', name: 'Hindi', native: 'हिंदी' },
+    { code: 'bn', name: 'Bengali', native: 'বাংলা' },
+    { code: 'te', name: 'Telugu', native: 'తెలుగు' },
+    { code: 'mr', name: 'Marathi', native: 'मराठी' },
+    { code: 'ta', name: 'Tamil', native: 'தமிழ்' },
+    { code: 'gu', name: 'Gujarati', native: 'ગુજરાતી' },
+    { code: 'kn', name: 'Kannada', native: 'ಕನ್ನಡ' },
+    { code: 'ml', name: 'Malayalam', native: 'മലയാളം' },
+    { code: 'or', name: 'Odia', native: 'ଓଡ଼ିଆ' },
+    { code: 'pa', name: 'Punjabi', native: 'ਪੰਜਾਬੀ' },
+    { code: 'as', name: 'Assamese', native: 'অসমীয়া' },
+    { code: 'ur', name: 'Urdu', native: 'اردو' },
+    { code: 'bho', name: 'Bhojpuri', native: 'भोजपुरी' },
+    { code: 'mai', name: 'Maithili', native: 'मैथिली' }
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -27,10 +54,10 @@ export const SiteHeader = () => {
                 <Shield className="h-4 w-4 text-trust absolute -top-1 -right-1" />
               </div>
               <div className="hidden sm:block">
-                <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                  AgriChain
+                <span className="text-xl font-bold text-primary">
+                  AgriTrust
                 </span>
-                <p className="text-xs text-muted-foreground">Odisha</p>
+                <p className="text-xs text-muted-foreground">Smart farming, transparent supply chains</p>
               </div>
             </div>
           </Link>
@@ -52,13 +79,37 @@ export const SiteHeader = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* Controls */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              For Farmers
+            {/* Language Selector */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm">
+                  <Globe className="h-4 w-4 mr-2" />
+                  Language
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-48 max-h-60 overflow-y-auto">
+                {languages.map((lang) => (
+                  <DropdownMenuItem key={lang.code} className="flex items-center justify-between">
+                    <span>{lang.name}</span>
+                    <span className="text-xs text-muted-foreground">{lang.native}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Theme Toggle */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
+              {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
             </Button>
-            <Button size="sm" className="bg-gradient-primary">
-              Track Produce
+
+            <Button size="sm" className="bg-primary hover:bg-primary/90">
+              Get Crop Advice
             </Button>
           </div>
 
@@ -93,10 +144,20 @@ export const SiteHeader = () => {
               ))}
               <div className="pt-4 space-y-2">
                 <Button variant="outline" size="sm" className="w-full">
-                  For Farmers
+                  <Globe className="h-4 w-4 mr-2" />
+                  Language
                 </Button>
-                <Button size="sm" className="w-full bg-gradient-primary">
-                  Track Produce
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                  onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                >
+                  {theme === "light" ? <Moon className="h-4 w-4 mr-2" /> : <Sun className="h-4 w-4 mr-2" />}
+                  {theme === "light" ? "Dark" : "Light"} Mode
+                </Button>
+                <Button size="sm" className="w-full bg-primary hover:bg-primary/90">
+                  Get Crop Advice
                 </Button>
               </div>
             </div>

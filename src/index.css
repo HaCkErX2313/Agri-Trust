@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    /* Agricultural color palette */
+    /* Light theme - Agricultural colors */
     --background: 0 0% 100%;
     --foreground: 140 15% 15%;
 
@@ -16,25 +16,25 @@
     --popover: 0 0% 100%;
     --popover-foreground: 140 15% 15%;
 
-    /* Primary: Deep agricultural green */
-    --primary: 142 72% 29%;
+    /* Primary: Vibrant green for AgriTrust */
+    --primary: 142 70% 45%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 142 60% 45%;
+    --primary-glow: 142 60% 55%;
 
-    /* Secondary: Warm earth tone */
-    --secondary: 32 20% 95%;
+    /* Secondary: Light sage */
+    --secondary: 120 10% 95%;
     --secondary-foreground: 140 15% 15%;
 
     /* Muted: Soft sage */
     --muted: 120 10% 95%;
     --muted-foreground: 140 8% 46%;
 
-    /* Accent: Vibrant agricultural green */
-    --accent: 142 60% 45%;
+    /* Accent: Bright green */
+    --accent: 142 70% 45%;
     --accent-foreground: 0 0% 98%;
 
     /* Trust colors */
-    --trust: 210 100% 56%;
+    --trust: 142 70% 45%;
     --trust-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
@@ -42,7 +42,7 @@
 
     --border: 120 10% 90%;
     --input: 120 10% 90%;
-    --ring: 142 72% 29%;
+    --ring: 142 70% 45%;
 
     --radius: 0.75rem;
 
@@ -77,41 +77,43 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme - AgriTrust style */
+    --background: 120 6% 8%;
+    --foreground: 120 5% 90%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 120 6% 10%;
+    --card-foreground: 120 5% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 120 6% 10%;
+    --popover-foreground: 120 5% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Primary: Bright green for dark mode */
+    --primary: 142 70% 45%;
+    --primary-foreground: 120 6% 8%;
+    --primary-glow: 142 60% 55%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary: Dark green */
+    --secondary: 120 8% 15%;
+    --secondary-foreground: 120 5% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Muted: Darker green */
+    --muted: 120 8% 15%;
+    --muted-foreground: 120 5% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent: Bright green */
+    --accent: 142 70% 45%;
+    --accent-foreground: 120 6% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Trust colors for dark mode */
+    --trust: 142 70% 45%;
+    --trust-foreground: 120 6% 8%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 120 8% 20%;
+    --input: 120 8% 20%;
+    --ring: 142 70% 45%;
   }
 }
 
