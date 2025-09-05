@@ -75,17 +75,16 @@ const Index = () => {
               Smart farming, transparent supply chains
             </Badge>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Agriculture, made smarter
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Right crop, right time, fair price
               <br />
-              <span className="text-primary">with AI advisory and</span>
+              <span className="text-primary">AgriTrust is your</span>
               <br />
-              <span className="text-primary">blockchain transparency</span>
+              <span className="text-primary">digital farming partner</span>
             </h1>
             
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl text-muted-foreground">
-              AgriTrust helps farmers choose the right crops for their soil and season, while 
-              building trust with an on-chain ledger for every batch from farm to fork.
+            <p className="text-lg md:text-xl mb-8 max-w-3xl text-muted-foreground">
+              सही फसल, सही समय, उचित मूल्य - किसान भाइयों के लिए AI सलाह और ब्लॉकचेन तकनीक के साथ पारदर्शी कृषि व्यापार।
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
