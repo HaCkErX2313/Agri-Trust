@@ -16,6 +16,22 @@ import {
   Leaf,
   Sprout
 } from "lucide-react";
+const [data, setData] = useState<any>(null);
+
+useEffect(() => {
+  const fetchWeather = async () => {
+    try {
+      const res = await fetch("/api/weather?city=Delhi"); // call your backend API
+      const json = await res.json();
+      setData(json);
+    } catch (err) {
+      console.error("Failed to fetch weather:", err);
+    }
+  };
+
+  fetchWeather();
+}, []);
+
 
 const Weather = () => {
   const currentWeather = {
