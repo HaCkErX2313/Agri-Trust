@@ -11,7 +11,7 @@ export default function QrDemo() {
     const scanner = new Html5QrcodeScanner("reader", {
       fps: 10,
       qrbox: 250,
-    });
+    }, false);
 
     scanner.render(
       (decodedText: string) => {

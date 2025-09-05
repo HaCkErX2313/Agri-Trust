@@ -56,17 +56,7 @@ export const SiteHeader = () => {
     <>
       {/* Government Top Bar */}
       <div className="bg-primary text-primary-foreground py-2 text-sm">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <span className="flex items-center">
-              <span className="mr-2">🇮🇳</span>
-              Government of India - Ministry of Agriculture & Farmers Welfare
-            </span>
-            <span className="flex items-center">
-              <Phone className="h-4 w-4 mr-1" />
-              Kisan Call Center: 1800-180-1551
-            </span>
-          </div>
+        <div className="container mx-auto px-4 flex justify-end items-center">
           <div className="flex items-center space-x-4">
             <Button
               variant="ghost"
@@ -88,9 +78,11 @@ export const SiteHeader = () => {
             <div className="flex items-center space-x-8">
               {/* Government Logo */}
               <div className="flex items-center space-x-4">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Shield className="h-8 w-8 text-primary" />
-                </div>
+                <img 
+                  src="/lovable-uploads/5c1fe5a4-f282-4b20-a6f3-2a98853bcb77.png" 
+                  alt="Government of India Emblem - Ashoka Stambha" 
+                  className="w-16 h-16 object-contain"
+                />
                 <div>
                   <span className="text-sm text-muted-foreground">भारत सरकार</span>
                   <br />
