@@ -33,25 +33,19 @@ useEffect(() => {
 }, []);
 
 
-const Weather = () => {
-  const currentWeather = {
-    location: "Bhubaneswar, Odisha",
-    temperature: 28,
-    condition: "Partly Cloudy",
-    humidity: 72,
-    windSpeed: 12,
-    visibility: 8,
-    rainfall: 2.3,
-    uvIndex: 6
-  };
+const currentWeather = data ? {
+  location: `${data.weather.name}, ${data.weather.sys.country}`,
+  temperature: Math.round(data.weather.main.temp),
+  condition: data.weather.weather[0].description,
+  humidity: data.weather.main.humidity,
+  windSpeed: data.weather.wind.speed,
+  visibility: data.weather.visibility / 1000, // convert meters to km
+  rainfall: data.weather.rain?.["1h"] || 0,
+  uvIndex: 0 // OpenWeather free API doesn’t give UV index; you can skip or fetch separately
+} : null;
 
-  const forecast = [
-    { day: "Today", icon: Cloud, temp: "28°/22°", condition: "Partly Cloudy", rain: "10%" },
-    { day: "Tomorrow", icon: CloudRain, temp: "26°/20°", condition: "Light Rain", rain: "60%" },
-    { day: "Day 3", icon: CloudRain, temp: "24°/19°", condition: "Moderate Rain", rain: "80%" },
-    { day: "Day 4", icon: Sun, temp: "29°/23°", condition: "Sunny", rain: "5%" },
-    { day: "Day 5", icon: Cloud, temp: "27°/21°", condition: "Cloudy", rain: "20%" }
-  ];
+const forecastData = data ? data.forecast.list.filter((f: any, i: number) => i % 8 === 0) : [];
+
 
   const advisories = [
     {
