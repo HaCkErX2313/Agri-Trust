@@ -13,6 +13,9 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import MarketPrices from "./pages/MarketPrices";
 import Weather from "./pages/Weather";
+import QrDemo from "./QrDemo";
+
+//import QrDemo from "./pages/QrDemo";   // ✅ NEW IMPORT
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { Chatbot } from "@/components/features/Chatbot";
@@ -36,7 +39,8 @@ const App = () => (
             <Route path="/signup" element={<SignUp />} />
             <Route path="/market-prices" element={<MarketPrices />} />
             <Route path="/weather" element={<Weather />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/qrdemo" element={<QrDemo />} /> {/* ✅ NEW ROUTE */}
+            {/* CATCH-ALL */}
             <Route path="*" element={<NotFound />} />
           </Routes>
           <SiteFooter />
