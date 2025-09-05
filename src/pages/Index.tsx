@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
   Shield, 
-  Users, 
   TrendingUp, 
   QrCode, 
   Leaf, 
@@ -21,12 +20,6 @@ import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-agriculture.jpg";
 
 const Index = () => {
-  const stats = [
-    { label: "Farmers Connected", value: "25,000+", icon: Users },
-    { label: "Products Tracked", value: "1.2M+", icon: Package },
-    { label: "Transparency Score", value: "98%", icon: Shield },
-    { label: "Districts Covered", value: "30", icon: Globe }
-  ];
 
   const features = [
     {
@@ -100,19 +93,6 @@ const Index = () => {
               </Link>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl">
-              {stats.map((stat, index) => {
-                const IconComponent = stat.icon;
-                return (
-                  <div key={index} className="text-center">
-                    <IconComponent className="h-8 w-8 mx-auto mb-2 text-primary" />
-                    <div className="text-2xl md:text-3xl font-bold">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </div>
-                );
-              })}
-            </div>
           </div>
         </div>
       </section>
