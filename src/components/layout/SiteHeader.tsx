@@ -93,8 +93,11 @@ export const SiteHeader = () => {
               {/* AgriTrust Logo */}
               <Link to="/" className="flex items-center space-x-3">
                 <div className="relative">
-                  <Leaf className="h-12 w-12 text-primary" />
-                  <Shield className="h-6 w-6 text-trust absolute -top-1 -right-1" />
+                  <img 
+                    src="/lovable-uploads/070cce5e-21b2-4253-a7cf-7a5a8f7b9ba1.png" 
+                    alt="GreenBlock Logo" 
+                    className="w-12 h-12 object-contain"
+                  />
                 </div>
                 <div>
                   <span className="text-2xl font-bold text-primary">AgriTrust</span>

@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 import { 
   Shield, 
   TrendingUp, 
@@ -14,12 +17,44 @@ import {
   Package,
   Brain,
   LinkIcon,
-  Smartphone
+  Smartphone,
+  Mail,
+  Phone,
+  MapPin,
+  Send
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 import heroImage from "@/assets/hero-agriculture.jpg";
+import galleryFarmerField from "@/assets/gallery-farmer-field.jpg";
+import galleryDigitalFarming from "@/assets/gallery-digital-farming.jpg";
+import galleryBlockchainProduce from "@/assets/gallery-blockchain-produce.jpg";
+import galleryCropFields from "@/assets/gallery-crop-fields.jpg";
+import galleryMarket from "@/assets/gallery-market.jpg";
+import galleryIrrigation from "@/assets/gallery-irrigation.jpg";
+import galleryTechAgriculture from "@/assets/gallery-tech-agriculture.jpg";
+import galleryCropDiversity from "@/assets/gallery-crop-diversity.jpg";
 
 const Index = () => {
+  const { toast } = useToast();
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const galleryImages = [
+    { src: galleryFarmerField, alt: "Farmer inspecting crops in agricultural field", title: "Modern Farming Practices" },
+    { src: galleryDigitalFarming, alt: "Farmers using digital technology", title: "Digital Agriculture" },
+    { src: galleryBlockchainProduce, alt: "Blockchain verified produce with QR codes", title: "Blockchain Verification" },
+    { src: galleryCropFields, alt: "Rice paddies and wheat fields", title: "Sustainable Crops" },
+    { src: galleryMarket, alt: "Agricultural marketplace", title: "Transparent Markets" },
+    { src: galleryIrrigation, alt: "Modern irrigation systems", title: "Smart Irrigation" },
+    { src: galleryTechAgriculture, alt: "Technology in agriculture", title: "AgriTech Solutions" },
+    { src: galleryCropDiversity, alt: "Diverse Indian crops", title: "Crop Diversity" }
+  ];
 
   const features = [
     {
@@ -50,6 +85,41 @@ const Index = () => {
     "Blockchain-secured transaction records",
     "Direct farmer-consumer connections"
   ];
+
+  const handleContactSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!contactForm.name || !contactForm.email || !contactForm.subject || !contactForm.message) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Simulate form submission
+    toast({
+      title: "Message Sent!",
+      description: "Thank you for contacting us. We'll get back to you soon.",
+    });
+
+    // Reset form
+    setContactForm({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setContactForm(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   return (
     <main className="min-h-screen bg-background">
@@ -361,6 +431,182 @@ const Index = () => {
                 </a>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">
+              <span className="text-primary">Agriculture Gallery</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Explore the future of agriculture through our collection of modern farming practices, 
+              blockchain technology, and sustainable crop production
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {galleryImages.map((image, index) => (
+              <Card key={index} className="group overflow-hidden shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105">
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <h3 className="text-white font-semibold text-center px-4">{image.title}</h3>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">
+              <span className="text-primary">Contact Us</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Have questions about AgriTrust? Need support? Get in touch with our team
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Contact Form */}
+            <Card className="shadow-elegant">
+              <CardHeader>
+                <CardTitle className="text-2xl text-primary">Send us a Message</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleContactSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="name">Name *</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        value={contactForm.name}
+                        onChange={handleInputChange}
+                        placeholder="Your full name"
+                        required
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="email">Email *</Label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={contactForm.email}
+                        onChange={handleInputChange}
+                        placeholder="your.email@example.com"
+                        required
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="subject">Subject *</Label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      value={contactForm.subject}
+                      onChange={handleInputChange}
+                      placeholder="What is this about?"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="message">Message *</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      value={contactForm.message}
+                      onChange={handleInputChange}
+                      placeholder="Tell us how we can help you..."
+                      className="min-h-32"
+                      required
+                    />
+                  </div>
+                  
+                  <Button type="submit" size="lg" className="w-full bg-primary hover:bg-primary/90">
+                    <Send className="h-5 w-5 mr-2" />
+                    Send Message
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <Card className="shadow-elegant">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold text-primary mb-6">Get in Touch</h3>
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-primary/20 rounded-full p-3 flex-shrink-0">
+                        <Mail className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Email</h4>
+                        <p className="text-muted-foreground">support@agritrust.gov.in</p>
+                        <p className="text-muted-foreground">info@agritrust.gov.in</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-primary/20 rounded-full p-3 flex-shrink-0">
+                        <Phone className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Phone</h4>
+                        <p className="text-muted-foreground">Toll Free: 1800-180-1551</p>
+                        <p className="text-muted-foreground">Helpline: +91-11-2674-6789</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <div className="bg-primary/20 rounded-full p-3 flex-shrink-0">
+                        <MapPin className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">Office</h4>
+                        <p className="text-muted-foreground">
+                          Ministry of Agriculture & Farmers Welfare<br />
+                          Krishi Bhawan, Dr. Rajendra Prasad Road<br />
+                          New Delhi - 110001, India
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="shadow-elegant">
+                <CardContent className="p-8 text-center">
+                  <h3 className="text-xl font-bold text-primary mb-4">Office Hours</h3>
+                  <div className="space-y-2 text-muted-foreground">
+                    <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM</p>
+                    <p><strong>Saturday:</strong> 9:00 AM - 1:00 PM</p>
+                    <p><strong>Sunday:</strong> Closed</p>
+                  </div>
+                  <div className="mt-6 pt-6 border-t">
+                    <p className="text-sm text-muted-foreground">
+                      For urgent matters, please call our 24/7 helpline
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
