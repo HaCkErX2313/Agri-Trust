@@ -6,6 +6,8 @@
   "scripts": {
     "compile": "node -e \"require('./deploy.js').compileContract()\"",
     "deploy": "node deploy.js",
+    "update-addresses": "node update-contract-address.js",
+    "deploy-and-update": "npm run deploy && npm run update-addresses",
     "test": "node test.js"
   },
   "dependencies": {
