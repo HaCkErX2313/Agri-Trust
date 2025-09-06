@@ -18,14 +18,11 @@ export const SiteHeader = () => {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
-    { name: "AI Advisory", href: "/advice" },
+    { name: "How It Works", href: "/about" },
+    { name: "Transparency Ledger", href: "/verify" },
+    { name: "Schemes & Subsidies", href: "/schemes" },
     { name: "Market Prices", href: "/market-prices" },
-    { name: "Weather", href: "/weather" },
-    { name: "Schemes", href: "/schemes" },
-    { name: "Ledger", href: "/verify" },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Contact", href: "/contact" },
+    { name: "Farmer Login", href: "/login" },
   ];
 
   const languages = [

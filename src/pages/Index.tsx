@@ -168,15 +168,13 @@ const Index = () => {
             </Badge>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Right crop, right time, fair price
+              <span className="text-primary">Farm-to-Fork Transparency.</span>
               <br />
-              <span className="text-primary">AgriTrust is your</span>
-              <br />
-              <span className="text-primary">digital farming partner</span>
+              Every crop has a digital record you can trust.
             </h1>
             
             <p className="text-lg md:text-xl mb-8 max-w-3xl text-muted-foreground">
-              सही फसल, सही समय, उचित मूल्य - किसान भाइयों के लिए AI सलाह और ब्लॉकचेन तकनीक के साथ पारदर्शी कृषि व्यापार।
+              AgriTrust uses blockchain to ensure farmers get fair prices, consumers get authentic produce, and every step is verified.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -219,6 +217,142 @@ const Index = () => {
                 </Card>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Transparency Ledger Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">
+              <span className="text-primary">Product Journey Transparency</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Follow every step of your product's journey from farm to your table
+            </p>
+          </div>
+          
+          <div className="max-w-6xl mx-auto">
+            <Card className="shadow-trust border-primary/20 p-8">
+              <h3 className="text-2xl font-bold mb-8 text-center">Sample Product Journey</h3>
+              <div className="grid md:grid-cols-5 gap-6">
+                <div className="text-center">
+                  <div className="bg-green-100 dark:bg-green-900/30 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="h-8 w-8 text-green-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">Farmer</h4>
+                  <p className="text-sm text-muted-foreground mb-2">Organic Wheat</p>
+                  <p className="text-xs text-green-600">✅ 15 Dec 2024</p>
+                  <p className="text-xs text-muted-foreground">Haryana, India</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="bg-green-100 dark:bg-green-900/30 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="h-8 w-8 text-green-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">FPO</h4>
+                  <p className="text-sm text-muted-foreground mb-2">Quality Check</p>
+                  <p className="text-xs text-green-600">✅ 16 Dec 2024</p>
+                  <p className="text-xs text-muted-foreground">Delhi Hub</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="bg-green-100 dark:bg-green-900/30 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="h-8 w-8 text-green-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">Transport</h4>
+                  <p className="text-sm text-muted-foreground mb-2">In Transit</p>
+                  <p className="text-xs text-green-600">✅ 17 Dec 2024</p>
+                  <p className="text-xs text-muted-foreground">Mumbai Route</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="bg-green-100 dark:bg-green-900/30 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="h-8 w-8 text-green-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">Mandi</h4>
+                  <p className="text-sm text-muted-foreground mb-2">Wholesale</p>
+                  <p className="text-xs text-green-600">✅ 18 Dec 2024</p>
+                  <p className="text-xs text-muted-foreground">Mumbai Mandi</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="bg-green-100 dark:bg-green-900/30 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="h-8 w-8 text-green-600" />
+                  </div>
+                  <h4 className="font-semibold mb-2">Retailer</h4>
+                  <p className="text-sm text-muted-foreground mb-2">Available</p>
+                  <p className="text-xs text-green-600">✅ 19 Dec 2024</p>
+                  <p className="text-xs text-muted-foreground">Local Store</p>
+                </div>
+              </div>
+              
+              <div className="mt-8 text-center">
+                <Link to="/verify">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                    <QrCode className="h-5 w-5 mr-2" />
+                    Track Your Product
+                  </Button>
+                </Link>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Blockchain Transparency Features Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">
+              <span className="text-primary">Blockchain Transparency Features</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Revolutionary technology ensuring complete trust and transparency in every transaction
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105 border-0 bg-card/80 backdrop-blur">
+              <CardContent className="p-8 text-center">
+                <div className="bg-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <Shield className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Immutable Records</h3>
+                <p className="text-muted-foreground">No tampering, full trust. Every transaction is permanently recorded on the blockchain.</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105 border-0 bg-card/80 backdrop-blur">
+              <CardContent className="p-8 text-center">
+                <div className="bg-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <TrendingUp className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Instant Payments</h3>
+                <p className="text-muted-foreground">Smart contracts ensure fairness. Automated payments guarantee farmers get paid instantly.</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105 border-0 bg-card/80 backdrop-blur">
+              <CardContent className="p-8 text-center">
+                <div className="bg-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <Package className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Traceability</h3>
+                <p className="text-muted-foreground">Every product has a digital ID. Complete visibility from seed to shelf.</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105 border-0 bg-card/80 backdrop-blur">
+              <CardContent className="p-8 text-center">
+                <div className="bg-primary/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+                  <QrCode className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Farmer to Consumer</h3>
+                <p className="text-muted-foreground">Direct trust with QR scan. Consumers can verify authenticity instantly.</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
