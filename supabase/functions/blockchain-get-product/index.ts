@@ -20,7 +20,7 @@ async function getProductFromBlockchain(productId: string) {
     "function productExists(string memory _productId) public view returns (bool)"
   ];
 
-  const CONTRACT_ADDRESS = "0x..."; // Update with deployed contract address
+  const CONTRACT_ADDRESS = Deno.env.get('POLYGON_CONTRACT_ADDRESS') || "0x1234567890123456789012345678901234567890"; // Placeholder - will be updated
 
   const provider = new ethers.providers.JsonRpcProvider(RPC_URL);
   const contract = new ethers.Contract(CONTRACT_ADDRESS, contractABI, provider);
