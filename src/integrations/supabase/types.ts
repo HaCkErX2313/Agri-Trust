@@ -56,6 +56,13 @@ export type Database = {
             referencedRelation: "products"
             referencedColumns: ["id"]
           },
+          {
+            foreignKeyName: "journey_stages_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products_public"
+            referencedColumns: ["id"]
+          },
         ]
       }
       products: {
@@ -96,7 +103,36 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      products_public: {
+        Row: {
+          created_at: string | null
+          crop_type: string | null
+          harvest_date: string | null
+          id: string | null
+          product_id: string | null
+          product_name: string | null
+          updated_at: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          crop_type?: string | null
+          harvest_date?: string | null
+          id?: string | null
+          product_id?: string | null
+          product_name?: string | null
+          updated_at?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          crop_type?: string | null
+          harvest_date?: string | null
+          id?: string | null
+          product_id?: string | null
+          product_name?: string | null
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never
