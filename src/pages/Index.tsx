@@ -86,7 +86,7 @@ const Index = () => {
     "Direct farmer-consumer connections"
   ];
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!contactForm.name || !contactForm.email || !contactForm.subject || !contactForm.message) {
@@ -98,19 +98,48 @@ const Index = () => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
-    });
+    try {
+      // Create email content
+      const emailBody = `
+        Name: ${contactForm.name}
+        Email: ${contactForm.email}
+        Subject: ${contactForm.subject}
+        
+        Message:
+        ${contactForm.message}
+        
+        ---
+        Sent from AgriTrust Contact Form
+      `;
 
-    // Reset form
-    setContactForm({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
+      // Create mailto link
+      const mailtoLink = `mailto:support@agritrust.gov.in?subject=${encodeURIComponent(contactForm.subject)}&body=${encodeURIComponent(emailBody)}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
+
+      toast({
+        title: "Opening Email Client",
+        description: "Your default email client will open with the pre-filled message.",
+      });
+
+      // Reset form after a delay
+      setTimeout(() => {
+        setContactForm({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      }, 1000);
+
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to open email client. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
