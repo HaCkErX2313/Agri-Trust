@@ -253,6 +253,118 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Government Schemes Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6">
+              <span className="text-primary">Government Agriculture Schemes</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Explore key Government of India schemes designed to support farmers and promote sustainable agriculture
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105">
+              <CardHeader>
+                <CardTitle className="text-lg text-primary">PM-KISAN</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Direct income support scheme providing ₹6,000 annually to eligible farmer families.</p>
+                <a href="https://pmkisan.gov.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 text-sm font-medium">
+                  Learn More →
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105">
+              <CardHeader>
+                <CardTitle className="text-lg text-primary">Pradhan Mantri Fasal Bima Yojana (PMFBY)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Comprehensive crop insurance scheme protecting farmers against production risks.</p>
+                <a href="https://pmfby.gov.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 text-sm font-medium">
+                  Learn More →
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105">
+              <CardHeader>
+                <CardTitle className="text-lg text-primary">Soil Health Card Scheme</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Provides soil health information to farmers for optimal nutrient management and crop planning.</p>
+                <a href="https://soilhealth.dac.gov.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 text-sm font-medium">
+                  Learn More →
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105">
+              <CardHeader>
+                <CardTitle className="text-lg text-primary">National Mission on Sustainable Agriculture (NMSA)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Promotes climate-resilient practices and sustainable farming techniques.</p>
+                <a href="https://agricoop.nic.in/en/nmsa" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 text-sm font-medium">
+                  Learn More →
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105">
+              <CardHeader>
+                <CardTitle className="text-lg text-primary">e-NAM (National Agriculture Market)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Online trading platform connecting farmers directly to markets for better price discovery.</p>
+                <a href="https://enam.gov.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 text-sm font-medium">
+                  Learn More →
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105">
+              <CardHeader>
+                <CardTitle className="text-lg text-primary">Pradhan Mantri Krishi Sinchai Yojana (PMKSY)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Irrigation and water-use efficiency scheme to expand cultivated area under assured irrigation.</p>
+                <a href="https://pmksy.gov.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 text-sm font-medium">
+                  Learn More →
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105">
+              <CardHeader>
+                <CardTitle className="text-lg text-primary">Kisan Credit Card (KCC)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">Provides farmers with timely credit support for agricultural needs at concessional rates.</p>
+                <a href="https://www.nabard.org/auth/writereaddata/tender/1806181053KCC%20Guidelines%20-%20English.pdf" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 text-sm font-medium">
+                  Learn More →
+                </a>
+              </CardContent>
+            </Card>
+
+            <Card className="shadow-elegant hover:shadow-trust transition-all duration-300 transform hover:scale-105">
+              <CardHeader>
+                <CardTitle className="text-lg text-primary">RKVY (Rashtriya Krishi Vikas Yojana)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">State-led funding support scheme for holistic agriculture development and infrastructure.</p>
+                <a href="https://rkvy.nic.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 text-sm font-medium">
+                  Learn More →
+                </a>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
