@@ -1,0 +1,24 @@
+{
+  "name": "agritrust-blockchain",
+  "version": "1.0.0",
+  "description": "Blockchain integration for AgriTrust supply chain transparency",
+  "main": "interact.js",
+  "scripts": {
+    "compile": "node -e \"require('./deploy.js').compileContract()\"",
+    "deploy": "node deploy.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2",
+    "solc": "^0.8.19"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "polygon",
+    "supply-chain",
+    "agriculture"
+  ],
+  "author": "AgriTrust Team",
+  "license": "MIT"
+}
