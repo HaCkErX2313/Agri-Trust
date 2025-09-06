@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import ProductTracker from '@/components/features/ProductTracker';
 import { 
   Shield, 
   TrendingUp, 
@@ -221,85 +222,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Transparency Ledger Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="text-primary">Product Journey Transparency</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Follow every step of your product's journey from farm to your table
-            </p>
-          </div>
-          
-          <div className="max-w-6xl mx-auto">
-            <Card className="shadow-trust border-primary/20 p-8">
-              <h3 className="text-2xl font-bold mb-8 text-center">Sample Product Journey</h3>
-              <div className="grid md:grid-cols-5 gap-6">
-                <div className="text-center">
-                  <div className="bg-green-100 dark:bg-green-900/30 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h4 className="font-semibold mb-2">Farmer</h4>
-                  <p className="text-sm text-muted-foreground mb-2">Organic Wheat</p>
-                  <p className="text-xs text-green-600">✅ 15 Dec 2024</p>
-                  <p className="text-xs text-muted-foreground">Haryana, India</p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="bg-green-100 dark:bg-green-900/30 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h4 className="font-semibold mb-2">FPO</h4>
-                  <p className="text-sm text-muted-foreground mb-2">Quality Check</p>
-                  <p className="text-xs text-green-600">✅ 16 Dec 2024</p>
-                  <p className="text-xs text-muted-foreground">Delhi Hub</p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="bg-green-100 dark:bg-green-900/30 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h4 className="font-semibold mb-2">Transport</h4>
-                  <p className="text-sm text-muted-foreground mb-2">In Transit</p>
-                  <p className="text-xs text-green-600">✅ 17 Dec 2024</p>
-                  <p className="text-xs text-muted-foreground">Mumbai Route</p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="bg-green-100 dark:bg-green-900/30 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h4 className="font-semibold mb-2">Mandi</h4>
-                  <p className="text-sm text-muted-foreground mb-2">Wholesale</p>
-                  <p className="text-xs text-green-600">✅ 18 Dec 2024</p>
-                  <p className="text-xs text-muted-foreground">Mumbai Mandi</p>
-                </div>
-                
-                <div className="text-center">
-                  <div className="bg-green-100 dark:bg-green-900/30 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle className="h-8 w-8 text-green-600" />
-                  </div>
-                  <h4 className="font-semibold mb-2">Retailer</h4>
-                  <p className="text-sm text-muted-foreground mb-2">Available</p>
-                  <p className="text-xs text-green-600">✅ 19 Dec 2024</p>
-                  <p className="text-xs text-muted-foreground">Local Store</p>
-                </div>
-              </div>
-              
-              <div className="mt-8 text-center">
-                <Link to="/verify">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90">
-                    <QrCode className="h-5 w-5 mr-2" />
-                    Track Your Product
-                  </Button>
-                </Link>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
+      <ProductTracker />
 
       {/* Blockchain Transparency Features Section */}
       <section className="py-20 bg-muted/30">

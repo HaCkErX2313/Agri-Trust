@@ -14,7 +14,86 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      journey_stages: {
+        Row: {
+          completion_date: string | null
+          created_at: string
+          id: string
+          location: string
+          notes: string | null
+          product_id: string
+          stage_name: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          completion_date?: string | null
+          created_at?: string
+          id?: string
+          location: string
+          notes?: string | null
+          product_id: string
+          stage_name: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          completion_date?: string | null
+          created_at?: string
+          id?: string
+          location?: string
+          notes?: string | null
+          product_id?: string
+          stage_name?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "journey_stages_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "products"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      products: {
+        Row: {
+          created_at: string
+          crop_type: string
+          farmer_location: string
+          farmer_name: string
+          harvest_date: string
+          id: string
+          product_id: string
+          product_name: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          crop_type: string
+          farmer_location: string
+          farmer_name: string
+          harvest_date: string
+          id?: string
+          product_id: string
+          product_name: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          crop_type?: string
+          farmer_location?: string
+          farmer_name?: string
+          harvest_date?: string
+          id?: string
+          product_id?: string
+          product_name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
