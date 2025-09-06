@@ -168,9 +168,9 @@ const Index = () => {
             </Badge>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-primary">Farm-to-Fork Transparency.</span>
+              <span className="text-primary">Transparent Farming with Blockchain.</span>
               <br />
-              Every crop has a digital record you can trust.
+              Trust built into every harvest.
             </h1>
             
             <p className="text-lg md:text-xl mb-8 max-w-3xl text-muted-foreground">
