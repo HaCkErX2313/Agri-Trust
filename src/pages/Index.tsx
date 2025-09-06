@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import ProductTracker from '@/components/features/ProductTracker';
 
 import { 
   Shield, 
@@ -25,7 +26,7 @@ import {
   Send
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState, lazy, Suspense } from "react";
+import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import heroImage from "@/assets/hero-agriculture.jpg";
 import galleryFarmerField from "@/assets/gallery-farmer-field.jpg";
@@ -36,7 +37,7 @@ import galleryMarket from "@/assets/gallery-market.jpg";
 import galleryIrrigation from "@/assets/gallery-irrigation.jpg";
 import galleryTechAgriculture from "@/assets/gallery-tech-agriculture.jpg";
 import galleryCropDiversity from "@/assets/gallery-crop-diversity.jpg";
-const ProductTrackerLazy = lazy(() => import('@/components/features/ProductTracker'));
+
 
 const Index = () => {
   const { toast } = useToast();
@@ -223,9 +224,7 @@ const Index = () => {
         </div>
       </section>
 
-      <Suspense fallback={<div className="container mx-auto px-4 py-20"><div className="text-center text-muted-foreground">Loading tracker...</div></div>}>
-        <ProductTrackerLazy />
-      </Suspense>
+      <ProductTracker />
 
       {/* Blockchain Transparency Features Section */}
       <section className="py-20 bg-muted/30">
