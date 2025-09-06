@@ -15,6 +15,7 @@ import MarketPrices from "./pages/MarketPrices";
 import Weather from "./pages/Weather";
 import Schemes from "./pages/Schemes";
 import Gallery from "./pages/Gallery";
+import Contact from "./pages/Contact";
 import QrDemo from "./QrDemo";
 
 //import QrDemo from "./pages/QrDemo";   // ✅ NEW IMPORT
@@ -43,6 +44,7 @@ const App = () => (
             <Route path="/weather" element={<Weather />} />
             <Route path="/schemes" element={<Schemes />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/qrdemo" element={<QrDemo />} /> {/* ✅ NEW ROUTE */}
             {/* CATCH-ALL */}
             <Route path="*" element={<NotFound />} />

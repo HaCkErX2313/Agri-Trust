@@ -54,23 +54,6 @@ export const SiteHeader = () => {
 
   return (
     <>
-      {/* Government Top Bar */}
-      <div className="bg-primary text-primary-foreground py-2 text-sm">
-        <div className="container mx-auto px-4 flex justify-end items-center">
-          <div className="flex items-center space-x-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              className="text-primary-foreground hover:bg-primary-foreground/20"
-            >
-              {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
-            </Button>
-            <span className="text-xs">A+ | A | A-</span>
-          </div>
-        </div>
-      </div>
-
       {/* Logo Header */}
       <div className="bg-background border-b py-4">
         <div className="container mx-auto px-4">
@@ -142,6 +125,16 @@ export const SiteHeader = () => {
 
             {/* Right Controls */}
             <div className="hidden lg:flex items-center space-x-3">
+              {/* Theme Toggle */}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                className="text-primary-foreground hover:bg-primary-foreground/20"
+              >
+                {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+              </Button>
+
               {/* Language Selector */}
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -209,6 +202,15 @@ export const SiteHeader = () => {
                   </Link>
                 ))}
                 <div className="pt-3 space-y-2 border-t border-primary-foreground/20 mt-3">
+                  <Button 
+                    variant="ghost" 
+                    size="sm" 
+                    className="w-full justify-start text-primary-foreground hover:bg-primary-foreground/20"
+                    onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                  >
+                    {theme === "light" ? <Moon className="h-4 w-4 mr-2" /> : <Sun className="h-4 w-4 mr-2" />}
+                    {theme === "light" ? "Dark Mode" : "Light Mode"}
+                  </Button>
                   <Button variant="ghost" size="sm" className="w-full justify-start text-primary-foreground hover:bg-primary-foreground/20">
                     <Globe className="h-4 w-4 mr-2" />
                     {getCurrentLanguage().native}
